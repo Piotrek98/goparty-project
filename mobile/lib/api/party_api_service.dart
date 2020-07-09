@@ -2,7 +2,7 @@ import 'package:http/http.dart' show Client;
 import 'package:prod_name/models/Event.dart';
 
 class PartyApiService {
-  String baseUrl = 'http://10.0.2.2:80';
+  String baseUrl = 'https://blooming-everglades-95744.herokuapp.com/';
   Client client = Client();
 
   Future<List<Event>> getEvents() async {

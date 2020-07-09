@@ -11,7 +11,7 @@ import 'package:prod_name/models/User.dart';
 
 class UserApiService {
   
-  String baseUrl = 'http://10.0.2.2:80';
+  String baseUrl = 'https://blooming-everglades-95744.herokuapp.com/';
   Client client = Client();
   Future<List<User>> getUsers() async{
       final response = await client.get('$baseUrl/user');

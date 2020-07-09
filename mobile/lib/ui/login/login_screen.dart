@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginScreen> {
       'password': passwordController.text
     };
     var jsonResponse;
-    var url = 'http://10.0.2.2:80/user/login';
+    var url = 'https://blooming-everglades-95744.herokuapp.com/user/login';
     var response = await http.post(url, body: data);
 
     if (response.statusCode == 200) {
@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginScreen> {
       sharedPreferences.setString("accountName", jsonResponse['accountName']);
       sharedPreferences.setInt("countFollowedBy", jsonResponse['countFollowedBy']);
       sharedPreferences.setInt("countMyFollows", jsonResponse['countMyFollows']);
-      sharedPreferences.setString("profileImage", jsonResponse['profileImage']['content']);
+      // sharedPreferences.setString("profileImage", jsonResponse['profileImage']['content']);
       setState((){
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (BuildContext context) => NavBar()),

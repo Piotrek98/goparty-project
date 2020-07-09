@@ -43,7 +43,7 @@ class _ThirdAddScreenState extends State<ThirdAddScreen> {
       "organizer": sharedPreferences.getInt('id').toString()
     };
 
-    var url = 'http://10.0.2.2:80/party';
+    var url = 'https://blooming-everglades-95744.herokuapp.com/party';
     var response = await http.post(url, body:data);
     print(response.body);
     if(response.statusCode == 200){

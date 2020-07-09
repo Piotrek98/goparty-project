@@ -60,7 +60,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
     };
 
     var jsonResponse;
-    var url = 'http://10.0.2.2:80/user';
+    var url = 'https://blooming-everglades-95744.herokuapp.com/user';
     print(url);
     var response = await http.post(url, body:data);
 
