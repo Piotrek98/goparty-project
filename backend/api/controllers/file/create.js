@@ -36,9 +36,6 @@ module.exports = {
       const baseUrl = sails.config.custom.baseUrl
       
       const fileId = path.basename(uploadedFiles[0].fd)
-
-    //   const name = uploadedFiles[0].filename
-
       const content = `${baseUrl}/file/${fileId}`;
       
       const file = await Files.create({fileId: fileId, content: content}).fetch()

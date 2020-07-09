@@ -1,18 +1,10 @@
 module.exports = {
 
   friendlyName: 'Current',
-
+  
   description: 'Current user.',
 
-  inputs: {
-
-  },
-
-  exits: {
-
-  },
-
-  fn: async function (inputs) {
+  fn: async function () {
     let usr = this.req.session.currentUser
     if (usr) {
       usr = await sails.helpers.user.findOne(usr.id, true, true)

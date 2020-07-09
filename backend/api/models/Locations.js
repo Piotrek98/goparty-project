@@ -6,17 +6,5 @@ module.exports = {
         
         latitude:{type:'number'},
         longitude:{type:'number'},
-
-        // country:{type:'string'},
-        // city:{type:'string'},
-
-        // state:{type:'string'},
-        // zipcode:{type:'string'},
-
-        // streetName:{type:'string'},
-        // streetNumber:{type:'string'},
-
-        // countryCode:{type:'string'},
-        // county:{type:'string'},
     }
 }

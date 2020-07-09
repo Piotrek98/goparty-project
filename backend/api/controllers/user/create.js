@@ -25,13 +25,6 @@ module.exports = {
 
       profileImage: {type:'number', required:false}
     },
-
-    // birthDate:{type:'string', required:true},
-    // country:{type:'string', required:false},
-    // phoneNumber:{
-    //   type:'number',
-    //   required:false,
-    // },
   },
 
   exits: {
@@ -43,17 +36,16 @@ module.exports = {
 
   fn: async function(inputs, exits){
 
-    // const user =  await User.find()
-    // for(const names of user.accountName){
-    //   if(inputs.accountName == names){
-    //     return this.res.badRequest('Account name is already in system.')
-    //   }
-    // }
+    const user =  await User.find()
+    for(const names of user.accountName){
+      if(inputs.accountName == names){
+        return this.res.badRequest('Account name is already in system.')
+      }
+    }
 
     inputs.activateCode = await sails.helpers.user.codeGenerate()
 
-    //TODO: wysyłanie kodu sms'em
-    //wybrac jedna z opcji, preferowany SMS
+    //TODO: send via SMS 
     // await sails.helpers.email.sms.sendCodeSms(inputs.phoneNumber, inputs.activateCode)
 
     const ejsVariables = {
@@ -63,7 +55,6 @@ module.exports = {
 
     const users = await User.find()
 
-    //TODO: użyc tranzakcji
     for(u of users){
       if(inputs.email == u.email){
         return this.res.badRequest('Email is already taken.')
@@ -71,9 +62,9 @@ module.exports = {
 
       const user = await User.create(inputs).fetch()
 
-      //TODO: !!! ODKOMENTOWAC NA ZAKONCZENIE BACKENDU I POPRAWIC TEMPLATKE Z POTWIERDZENIEM REJESTRACJI !!!
+      //TODO: UNCOMMENT AT THE END OF BACKEND WORK
       // const html = await ejs.renderFile(templatePath, ejsVariables)
-      // const subject = 'EventZone - potwierdzenie rejestracji'
+      // const subject = 'GoParty - register confirmation'
       // const email = inputs.email
       // const res = await sails.helpers.email.send(email, subject, html)
       // if(!res || !html || !user){

@@ -8,7 +8,6 @@ module.exports = {
   description: 'Downloads a file in parameter',
 
   inputs: {
-    // id: { type: 'string', required: true, in: 'query' }
     id: { type: 'number', required: true}
   },
 

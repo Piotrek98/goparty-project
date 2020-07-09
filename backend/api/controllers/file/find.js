@@ -21,7 +21,6 @@ module.exports = {
 
         this.res.set({
         'Content-disposition': `inline; filename="${id}"`,
-        // 'content-type': 'application/jpeg',
         'Access-Control-Allow-Origin': '*'
         })
         

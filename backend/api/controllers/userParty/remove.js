@@ -14,10 +14,6 @@ module.exports = {
     },
   
     fn: async function (inputs, exits) {
-      // let user = this.req.session.currentUser
-      // if (user) {
-      //   user = await sails.helpers.user.findOne(user.id, false, false)
-      // } else return this.res.badRequest('User not logged in.')
 
       const party = await Party.findOne(inputs.pid)
       if (!party) return this.res.notFound()

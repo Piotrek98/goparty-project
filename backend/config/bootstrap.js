@@ -10,19 +10,5 @@
 //  */
 
 module.exports.bootstrap = async function() {
-  await User.findOrCreate({email:'admin@admin.pl'},{
-    firstName:'admin',
-    lastName:'admin',
-    accountName:'Kot filemon',
-    email:'admin@admin.pl',
-    password:'Test1234',
-    admin:true,
-    profileImage:null,
-    activateCode: 000000,
-    latitude:53.471970,
-    longitude:15.334050,
-    countFollowedBy: 0,
-    countMyFollows: 0,
-    active: true
-  });  
+  
 };

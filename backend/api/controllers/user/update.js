@@ -15,9 +15,6 @@ module.exports = {
 
 
     email:{type:'string', required:false, isEmail:true, unique:true},
-    // password:{type:'string', required:false, minLength:6, maxLength:128},
-
-    // phoneNumber:{type:'string', required:false},
 
     profileImage:{type:'number', required:false},
 

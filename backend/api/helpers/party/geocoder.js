@@ -19,7 +19,6 @@ module.exports = {
     },
 
     fn: async function({address, city}){
-        // const location = address + ' ' + city
         const response = await geocoder.geocode({
             address, city
         })

@@ -13,13 +13,14 @@ module.exports = {
     exports:{},
 
     fn: async function({number, code}){
-        const body = `Twój kod aktywacyjny: ${code}`
+        const body = `Activate code: ${code}`
 
         client.messages
             .create({
                 body: body,
+                //TODO: add number
                 from: '+48 ***',
-                to: '+48 ***'
+                to: number
             })
             .then(message => console.log(message.sid));
     }
