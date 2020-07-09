@@ -20,22 +20,22 @@ module.exports.policies = {
 
 
   // '*': true,
-  'user/create':true,
-  'user/login':true,
-  'user/logout':'userLoggedIn',
-  'user/current':'userLoggedIn',
-  'user/find-one':'isAdmin',
-  'user/find':'isAdmin',
-  'user/update':['userLoggedIn','isAdmin'],
+  // 'user/create':true,
+  // 'user/login':true,
+  // 'user/logout':'userLoggedIn',
+  // 'user/current':'userLoggedIn',
+  // 'user/find-one':'isAdmin',
+  // 'user/find':'isAdmin',
+  // 'user/update':['userLoggedIn','isAdmin'],
 
-  'order/create':true,
-  'order/destroy':'isAdmin',
-  'order/find-one':'isAdmin',
-  'order/update':'isAdmin',
-  'order/find':'isAdmin',
+  // 'order/create':true,
+  // 'order/destroy':'isAdmin',
+  // 'order/find-one':'isAdmin',
+  // 'order/update':'isAdmin',
+  // 'order/find':'isAdmin',
 
-  'userOrder/add':['isAdmin', 'userLoggedIn'],
-  'userOrder/remove':'isAdmin'
+  // 'userOrder/add':['isAdmin', 'userLoggedIn'],
+  // 'userOrder/remove':'isAdmin'
 
 
 };
