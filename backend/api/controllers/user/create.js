@@ -13,7 +13,7 @@ module.exports = {
     lastName:{type:'string', required:true},
 
     email:{type:'string', required:true, isEmail:true, unique:true},
-    accountName:{type:'string', required:true},
+    accountName:{type:'string', required: true, unique: true},
  
     password: {
       type:'string',
@@ -36,12 +36,12 @@ module.exports = {
 
   fn: async function(inputs, exits){
 
-    const user =  await User.find()
-    for(const names of user.accountName){
-      if(inputs.accountName == names){
-        return this.res.badRequest('Account name is already in system.')
-      }
-    }
+    // const user =  await User.find()
+    // for(const names of user.accountName){
+    //   if(inputs.accountName == names){
+    //     return this.res.badRequest('Account name is already in system.')
+    //   }
+    // }
 
     inputs.activateCode = await sails.helpers.user.codeGenerate()
 
