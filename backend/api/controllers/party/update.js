@@ -33,7 +33,7 @@ module.exports = {
 
     fn: async function(inputs, exits){
 
-        //TODO walidacja czasu 
+        //TODO: TIME VALIDATION
 
         if(inputs.address || inputs.country || inputs.zipCode){
             const locate = await sails.helpers.party.geocoder(inputs.address, inputs.country, inputs.zipCode)

@@ -39,11 +39,11 @@ module.exports = {
         frePlacesCount = parseInt(inputs.freePlacesCount)
         organizer = parseInt(inputs.organizer)
 
-        // let user = this.req.session.currentUser
-        // if (user) {
-        //   user = await sails.helpers.user.findOne(user.id, false, false)
-        //   inputs.organizer = user.id
-        // } else return this.res.badRequest('User not logged in.')
+        let user = this.req.session.currentUser
+        if (user) {
+          user = await sails.helpers.user.findOne(user.id, false, false)
+          inputs.organizer = user.id
+        } else return this.res.badRequest('User not logged in.')
         
 
         const locate = await sails.helpers.party.geocoder(inputs.address, inputs.city)

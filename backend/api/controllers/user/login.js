@@ -33,7 +33,7 @@ module.exports = {
     if (!user) { 
       return exits.wrongCredentials('Wrong password or User does not exists')
     }
-    // !!! TODO: DO ODKOMENTOWANIA !!!
+    // !!! TODO: TO UNCOMMENT !!!
     // if(!user.active){
     //   return this.res.badRequest('Account is not active.')
     // }

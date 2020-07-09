@@ -14,11 +14,6 @@ module.exports = {
     },
   
     fn: async function (inputs) {
-      // let user = this.req.session.currentUser
-      // if (user) {
-      //   user = await sails.helpers.user.findOne(user.id, false, false)
-      //   inputs.user = user.id
-      // } else return this.res.badRequest('User not logged in.')
   
       const party = await Party.findOne(inputs.pid)
       if (!party) return this.res.notFound()
@@ -41,7 +36,6 @@ module.exports = {
         }).fetch()
 
         await User.removeFromCollection(inputs.uid, 'myInterestedEvents').members([inputs.pid])
-        //return this.res.ok(relation)
 
         const content = `Weźmiesz udział w ${party.title}!`
 
