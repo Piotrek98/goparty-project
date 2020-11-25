@@ -1,14 +1,13 @@
 import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
-import 'package:prod_name/models/Event.dart';
 import 'package:prod_name/service/languages/AppTranslations.dart';
 import 'package:prod_name/ui/home/account/events/events_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:prod_name/constants/Constants.dart' as Constants;
+
 
 class ThirdAddScreen extends StatefulWidget {
   @override
@@ -43,7 +42,7 @@ class _ThirdAddScreenState extends State<ThirdAddScreen> {
       "organizer": sharedPreferences.getInt('id').toString()
     };
 
-    var url = 'https://blooming-everglades-95744.herokuapp.com/party';
+    var url = Constants.baseURL;
     var response = await http.post(url, body:data);
     print(response.body);
     if(response.statusCode == 200){
