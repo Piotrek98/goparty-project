@@ -8,6 +8,8 @@ import 'package:prod_name/ui/registration/basic_screen.dart';
 import 'package:http/http.dart' as http;
 import 'package:prod_name/ui/registration/verification_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:prod_name/constants/Constants.dart' as Constant;
+
 
 class PasswordScreen extends StatefulWidget {
   @override
@@ -60,12 +62,13 @@ class _PasswordScreenState extends State<PasswordScreen> {
     };
 
     var jsonResponse;
-    var url = 'https://blooming-everglades-95744.herokuapp.com/user';
+    var url = Constant.baseURL + 'user';
     print(url);
     var response = await http.post(url, body:data);
 
     if(response.statusCode == 200){
       jsonResponse = json.decode(response.body);
+      print(jsonResponse);
       sharedPreferences.setInt('newUserId', jsonResponse['id']);
       setState(() {
         Navigator.of(context).pushAndRemoveUntil(

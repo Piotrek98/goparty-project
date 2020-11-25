@@ -8,6 +8,8 @@ import 'package:prod_name/ui/start/start_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:prod_name/constants/Constants.dart' as Constant;
+
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -27,9 +29,9 @@ class _LoginPageState extends State<LoginScreen> {
       'password': passwordController.text
     };
     var jsonResponse;
-    var url = 'https://blooming-everglades-95744.herokuapp.com/user/login';
+    var url = Constant.baseURL;
     var response = await http.post(url, body: data);
-
+    print(response.body);
     if (response.statusCode == 200) {
       _isLoading = false;
       jsonResponse = json.decode(response.body);

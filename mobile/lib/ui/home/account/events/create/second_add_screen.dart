@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
 import 'dart:async';
 import 'package:http/http.dart'as http;
 import 'package:flutter/cupertino.dart';
@@ -9,7 +7,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:prod_name/constants/Constants.dart' as Constants;
 import 'package:prod_name/service/languages/AppTranslations.dart';
 import 'package:prod_name/ui/home/account/events/create/third_add_screen.dart';
-import 'package:prod_name/ui/registration/password_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SecondAddScreen extends StatefulWidget {

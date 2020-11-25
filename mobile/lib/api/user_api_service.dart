@@ -1,27 +1,21 @@
 import 'dart:async';
-import 'dart:convert';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:core';
-
 import 'package:http/http.dart' show Client;
-
 import 'package:prod_name/models/User.dart';
+import 'package:prod_name/constants/Constants.dart' as Constant;
 
 class UserApiService {
   
-  String baseUrl = 'https://blooming-everglades-95744.herokuapp.com/';
   Client client = Client();
   Future<List<User>> getUsers() async{
-      final response = await client.get('$baseUrl/user');
+      final response = await client.get('${Constant.baseURL}/user');
       if(response.statusCode == 200){
         return usersFromJson(response.body);
       }else return null;
   }
 
   Future<User> getUser(int id) async{
-    final response = await client.get('$baseUrl/user/$id');
+    final response = await client.get('${Constant.baseURL}/user/$id');
     if(response.statusCode == 200){
       return userFromJson(response.body);
     }else return null;
@@ -29,7 +23,7 @@ class UserApiService {
 
   Future<bool> createUser(User data) async{
     final response = await client.post(
-      '$baseUrl/user',
+      '${Constant.baseURL}/user',
       headers: {"content-type":"application/json"},
       body: userToJson(data),
     );
@@ -40,7 +34,7 @@ class UserApiService {
 
   Future<bool> updateUser(User data) async{
     final response = await client.put(
-      '$baseUrl/user/${data.id}',
+      '${Constant.baseURL}/user/${data.id}',
         headers: {"content-type":"application/json"},
         body: userToJson(data),
     );
@@ -50,7 +44,7 @@ class UserApiService {
   }
 
   Future<bool> logoutUser() async{
-      final response = await client.post('$baseUrl/user/logout');
+      final response = await client.post('${Constant.baseURL}/user/logout');
       if(response.statusCode == 200){
         return true;
       }else return false;
@@ -60,7 +54,7 @@ class UserApiService {
       final body = {"code": '$code'};
 
       final response = await client.post(
-        '$baseUrl/user/account/$id',
+        '${Constant.baseURL}/user/account/$id',
         body: body
       );
       // if(response.statusCode == 200){
@@ -70,21 +64,21 @@ class UserApiService {
   }
 
   Future<bool> deleteAccount(int id) async {
-    final response = await client.delete('$baseUrl/user/$id');
+    final response = await client.delete('${Constant.baseURL}/user/$id');
     if(response.statusCode == 200){
       return true;
     }else return false;
   }
 
   Future<bool> addUserToObservation(int uid, int pid) async{
-      final response = await client.put('$baseUrl/user/observation/$uid/$pid');
+      final response = await client.put('${Constant.baseURL}/user/observation/$uid/$pid');
       if(response.statusCode == 200){
         return true;
       }else return false;
   }
 
   Future<bool> removeUserFromObservation(int uid, int pid) async{
-      final response = await client.delete('$baseUrl/user/observation/$uid/$pid');
+      final response = await client.delete('${Constant.baseURL}/user/observation/$uid/$pid');
       if(response.statusCode == 200){
         return true;
       }else return false;
