@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:prod_name/api/user_api_service.dart';
 import 'package:prod_name/service/languages/AppTranslations.dart';
+import 'package:prod_name/ui/home/account/user/user_screen.dart';
 import 'package:prod_name/ui/registration/basic_screen.dart';
 import 'package:http/http.dart' as http;
 import 'package:prod_name/ui/registration/verification_screen.dart';
@@ -69,6 +70,11 @@ class _PasswordScreenState extends State<PasswordScreen> {
     if(response.statusCode == 200){
       jsonResponse = json.decode(response.body);
       print(jsonResponse);
+      sharedPreferences.setString('firstName', jsonResponse['firstName']);
+      sharedPreferences.setString('lastName', jsonResponse['lastName']);
+      sharedPreferences.setString('accountName', jsonResponse['accountName']);
+      sharedPreferences.setInt('countMyFollows', jsonResponse['countMyFollows']);
+      sharedPreferences.setInt('countFollowedBy', jsonResponse['countFollowedBy']);
       sharedPreferences.setInt('newUserId', jsonResponse['id']);
       setState(() {
         Navigator.of(context).pushAndRemoveUntil(

@@ -1,6 +1,7 @@
 library constants;
 
-const String baseURL = "http://192.168.43.115:80/";
+// const String baseURL = "http://192.168.43.115:80/";
+const String baseURL = "https://blooming-everglades-95744.herokuapp.com/";
 
 const String VERSION_NUMBER = "version: 0.0.1 beta";
 

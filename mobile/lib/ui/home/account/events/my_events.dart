@@ -37,7 +37,10 @@ class _MyEventsState extends State<MyEvents> {
           return Scaffold(
             backgroundColor: Colors.white,
             body: Center(
-              child: CircularProgressIndicator(),
+              // child: CircularProgressIndicator(),
+              child: Text(
+                "Empty :("
+              ),
             ),
           );
         }

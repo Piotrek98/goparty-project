@@ -4,6 +4,10 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:prod_name/api/user_api_service.dart';
 import 'package:prod_name/service/languages/AppTranslations.dart';
 import 'package:prod_name/ui/home/account/user/user_screen.dart';
+import 'package:prod_name/ui/home/home/home_screen.dart';
+import 'package:prod_name/ui/home/map/map_screen.dart';
+import 'package:prod_name/ui/home/search/search_screen.dart';
+import 'package:prod_name/ui/start/welcome_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class VerificationScreen extends StatefulWidget{
@@ -177,7 +181,7 @@ class _VerificationScreenState extends State<VerificationScreen>{
         ),
         onTap: (){
            Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => UserScreen()));}
+                    MaterialPageRoute(builder: (context) => WelcomeScreen()));}
       ),
     );
   }

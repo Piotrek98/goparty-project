@@ -53,7 +53,10 @@ class _InteredstedScreenState extends State<InteredstedScreen> {
           return Scaffold(
             backgroundColor: Colors.white,
             body: Center(
-              child: CircularProgressIndicator(),
+              // child: CircularProgressIndicator(),
+              child: Text(
+                "Empty :("
+              ),
             ),
           );
         }

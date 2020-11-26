@@ -38,7 +38,10 @@ class _MyFollowsState extends State<MyFollows> {
           return Scaffold(
             backgroundColor: Colors.white,
             body: Center(
-              child: CircularProgressIndicator(),
+              // child: CircularProgressIndicator(),
+              child: Text(
+                "Empty :("
+              )
             ),
           );
         }

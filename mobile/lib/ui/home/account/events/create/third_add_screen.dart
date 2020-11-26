@@ -42,9 +42,10 @@ class _ThirdAddScreenState extends State<ThirdAddScreen> {
       "organizer": sharedPreferences.getInt('id').toString()
     };
 
-    var url = Constants.baseURL;
+
+    var url = Constants.baseURL + "party";
     var response = await http.post(url, body:data);
-    print(response.body);
+    print(url);
     if(response.statusCode == 200){
       var jsonResponse = json.decode(response.body);
       setState(() {

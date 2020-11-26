@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prod_name/api/user_api_service.dart';
-import 'package:prod_name/models/User.dart';
 import 'package:prod_name/service/languages/AppTranslations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

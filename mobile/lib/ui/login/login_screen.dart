@@ -29,7 +29,8 @@ class _LoginPageState extends State<LoginScreen> {
       'password': passwordController.text
     };
     var jsonResponse;
-    var url = Constant.baseURL;
+    var url = Constant.baseURL + 'user/login';
+    print(url);
     var response = await http.post(url, body: data);
     print(response.body);
     if (response.statusCode == 200) {
